@@ -1,0 +1,81 @@
+/* ------- */
+/* GENERAL */
+/* ------- */
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.divider {
+    height: 2px;
+    width: 100%;
+    display: block;
+    margin: 3vh;
+    overflow: hidden;
+    background-color: gray;
+}
+
+section .container {
+    padding-top: 80px;
+}
+
+/* ------ */
+/* NAVBAR */
+/* ------ */
+
+.nav-item.active {
+    background-color: darkgray;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+
+#navbar_profile {
+    margin-right: 20px;
+}
+
+#navbar_dashboard {
+    margin-left: 15px;
+}
+
+
+
+
+
+/* ----- */
+/* MEDIA */
+/* ----- */
+
+@media (min-width: 576px) {
+    html {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 992px) {
+    html {
+        font-size: 0.9rem;
+    }
+
+    #navbar_title {
+        border-right: 2px solid grey;
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Soapify</title>
+    <script src="libs/js/jquery-3.3.1.min.js"></script>
+    <link href="libs/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="libs/js/bootstrap.bundle.min.js"></script>
+
+    <script src="libs/js/underscore-min.js"></script>
+
+    <link rel="stylesheet" href="resources/css/default.css">
+
+</head>
+
+<body>
+
+    <div class="content-wrapper">
+        <div id="navbar" class="viewcontainer"></div>
+        <section class="content">
+            <div id="info" class="viewcontainer"></div>
+            <div id="map" class="viewcontainer"><div style="overflow:hidden;width: 700px;position: relative;"><iframe width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Regensburg%2C%20Germany+(Soapify)&amp;ie=UTF8&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/it/">embedgooglemaps IT</a> & <a href="https://gefalltmirbutton.org/de/">besuche diesen</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><br /></div>
+            <div id="contact" class="viewcontainer"></div>
+        </section>
+    </div>
+
+    <div id="templates"></div>
+    
+    <script src="resources/js/app.js"></script>
+    
+    <script src="vendors/event.js"></script>
+    
+    <script src="resources/js/app.js"></script>
+    <script src="resources/js/models/model_marker.js"></script>
+    <script src="resources/js/viewcontroller/viewcontroller_navbar.js"></script>
+    <script src="resources/js/viewcontroller/viewcontroller_info.js"></script>
+    <script src="resources/js/viewcontroller/viewcontroller_map.js"></script>
+    <script src="resources/js/viewcontroller/viewcontroller_contact.js"></script>
+
+
+
+    <script>
+        $.when(
+            $.get('resources/html-templates/template_navbar.html', function(data) {
+                $('#templates').append(data);
+            }),
+            $.Deferred(function(deferred) {
+                $(deferred.resolve);
+            })
+        ).done(function() {
+            if (status != "error") {
+                Soapify.init();
+            }
+        });
+
+    </script>
+</body>
+
+</html>
