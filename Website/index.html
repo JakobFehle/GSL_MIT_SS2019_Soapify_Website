@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -12,7 +14,7 @@
     <script src="libs/js/bootstrap.bundle.min.js"></script>
 
     <script src="libs/js/underscore-min.js"></script>
-
+<script src="resources/js/intro.js"></script>
     <link rel="stylesheet" href="resources/css/default.css">
 
 </head>
@@ -22,8 +24,20 @@
     <div class="content-wrapper">
         <div id="navbar" class="viewcontainer"></div>
         <section class="content">
-            <div id="info" class="viewcontainer"></div>
-            <div id="map" class="viewcontainer"><div style="overflow:hidden;width: 700px;position: relative;"><iframe width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Regensburg%2C%20Germany+(Soapify)&amp;ie=UTF8&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/it/">embedgooglemaps IT</a> & <a href="https://gefalltmirbutton.org/de/">besuche diesen</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><br /></div>
+            <div id="info" class="viewcontainer">
+                <h1>
+                    <a href="" class="typewrite" data-period="2000" data-type='[ "Soapify.", "The First Soap Refilling Station.", "Get Clean in a Clean way." ]'>
+                        <span class="wrap"></span>
+                    </a>
+                </h1>
+
+            </div>
+            <div id="map" class="viewcontainer">
+                <div style="overflow:hidden;width: 700px;position: relative;">
+                    <iframe width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Regensburg%2C%20Germany+(Soapify)&amp;ie=UTF8&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
+                        <small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/it/">embedgooglemaps IT</a> & <a href="https://gefalltmirbutton.org/de/">besuche diesen</a></small></div>
+                    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><br /></div>
             <div id="contact" class="viewcontainer"></div>
         </section>
     </div>
