@@ -58,6 +58,7 @@ Soapify = (function () {
     function init() {
         initModules();
         initListeners();
+        goTo({data: {target: 'info'}});
     }
 
     that.init = init;
