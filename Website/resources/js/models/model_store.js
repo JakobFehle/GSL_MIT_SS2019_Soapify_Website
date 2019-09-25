@@ -1,16 +1,16 @@
 var Soapify = Soapify || {},
     EventTarget = EventTarget || {};
 
-Soapify.model_marker = function (backendAdress) {
+Soapify.model_store = function (backendAdress) {
     "use strict";
 
     var that = new EventTarget(),
-        markers;
+        stores;
     
-    function loadMarkers() {
-        // Load Markers from Backend
+    function loadStores() {
+        // Load Stores from Backend
         
-        markers = [
+        stores = [
             {
                 "id": 0,
                 "name": "Edeka",
@@ -74,24 +74,32 @@ Soapify.model_marker = function (backendAdress) {
         ]
     }
 
-    function getMarkers() {
-        return markers;
+    function getStores() {
+        return stores;
     }
 
     function getAddressString(objId) {
-        let store = markers.find(function(obj) {
+        let store = stores.find(function(obj) {
             return obj.id == objId;
         });
         let addressString = store.address.street + " " + store.address.number + ", " + store.address.city;
         return addressString.replace(/\s/g, "+");
     }
     
+    function getStoresByInput(input) {
+        let result = _.filter(stores, function (store) {
+            return store.name.toLowerCase().includes(input.toLowerCase());
+        });
+        return result;
+    }
+    
     function init() {
-        that.loadMarkers = loadMarkers
-        that.getMarkers = getMarkers
+        that.loadStores = loadStores
+        that.getStores = getStores
         that.getAddressString = getAddressString
+        that.getStoresByInput = getStoresByInput
         
-        loadMarkers();
+        loadStores();
         return that;
     }
 

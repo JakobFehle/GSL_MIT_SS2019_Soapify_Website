@@ -10,14 +10,14 @@ Soapify = (function () {
         vc_info,
         vc_map,
         vc_contact,
-        model_marker;
+        model_store;
 
     // Init necessary modules at start
     function initModules() {
-        model_marker = new Soapify.model_marker();
+        model_store = new Soapify.model_store();
         vc_navbar = new Soapify.viewcontroller_navbar();
         vc_info = new Soapify.viewcontroller_info();
-        vc_map = new Soapify.viewcontroller_map(model_marker);
+        vc_map = new Soapify.viewcontroller_map(model_store);
         vc_contact = new Soapify.viewcontroller_contact();
     }
 
