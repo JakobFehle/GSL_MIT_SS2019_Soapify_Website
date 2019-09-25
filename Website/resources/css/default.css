@@ -43,9 +43,16 @@ section .container {
     margin-left: 15px;
 }
 
+/* ------ */
+/*  Maps  */
+/* ------ */
 
-
-
+.list-group{
+    max-height: 800px;
+    margin-bottom: 10px;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
+}
 
 /* ----- */
 /* MEDIA */

@@ -1,7 +1,7 @@
 var Soapify = Soapify || {},
     EventTarget = EventTarget || {};
 
-Soapify.viewcontroller_map = function () {
+Soapify.viewcontroller_map = function (model_marker) {
     "use strict";
     
     var that = new EventTarget(),
@@ -10,26 +10,31 @@ Soapify.viewcontroller_map = function () {
         googleMapsEl,
         mapTemplateHTML = $("#templates .template_map").html(),
         googleMapsTemplate,
-        googleMapsTemplateHTML = $("#templates .template_googleMaps").html();
+        googleMapsTemplateHTML = $("#templates .template_googleMaps").html(),
+        googleMapsInitString = "Arcaden,+Regensburg";
 
     // Init view
     function initView() {
-        mapEl.html(mapTemplate());
+        let storeObject = {stores: model_marker.getMarkers()};
+        console.log(storeObject)
+        mapEl.html(mapTemplate(storeObject));
         googleMapsEl = $("#googleMaps");
     }
 
-    function reloadGoogleMaps() {
-        googleMapsEl.html(googleMapsTemplate({query: "Galgenbergstraße,+Regensburg"}));
+    function reloadGoogleMaps(query) {
+        googleMapsEl.html(googleMapsTemplate({query: query}));
     }
     
     // Init listeners
     function initListeners() {
-
+        $("#map .list-group-item").click(function (event) {
+            reloadGoogleMaps(model_marker.getAddressString(event.target.id));
+        });
     }
 
     // Wire model
     function wireModel() {
-
+        
     }
 
     // Activate view
@@ -38,7 +43,7 @@ Soapify.viewcontroller_map = function () {
             display: "block"
         });
         document.title = "Soapify - Map";
-        reloadGoogleMaps();
+        reloadGoogleMaps(googleMapsInitString);
     }
 
     function init() {
