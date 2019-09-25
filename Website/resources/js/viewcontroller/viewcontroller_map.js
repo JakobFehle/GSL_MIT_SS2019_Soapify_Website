@@ -7,13 +7,21 @@ Soapify.viewcontroller_map = function () {
     var that = new EventTarget(),
         mapTemplate,
         mapEl = $("#map"),
-        mapTemplateHTML = $("#templates .template_map").html();
+        googleMapsEl,
+        mapTemplateHTML = $("#templates .template_map").html(),
+        googleMapsTemplate,
+        googleMapsTemplateHTML = $("#templates .template_googleMaps").html();
 
     // Init view
     function initView() {
         mapEl.html(mapTemplate());
+        googleMapsEl = $("#googleMaps");
     }
 
+    function reloadGoogleMaps() {
+        googleMapsEl.html(googleMapsTemplate({query: "Galgenbergstraße,+Regensburg"}));
+    }
+    
     // Init listeners
     function initListeners() {
 
@@ -30,11 +38,13 @@ Soapify.viewcontroller_map = function () {
             display: "block"
         });
         document.title = "Soapify - Map";
+        reloadGoogleMaps();
     }
 
     function init() {
-        //mapTemplate = _.template(mapTemplateHTML);
-        //initView();
+        mapTemplate = _.template(mapTemplateHTML);
+        googleMapsTemplate = _.template(googleMapsTemplateHTML);
+        initView();
         //wireModel();
         initListeners();
 
