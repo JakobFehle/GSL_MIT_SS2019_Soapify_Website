@@ -1,27 +1,44 @@
 var Soapify = Soapify || {},
     EventTarget = EventTarget || {};
 
-Soapify.viewcontroller_map = function () {
+Soapify.viewcontroller_map = function (model_marker) {
     "use strict";
     
     var that = new EventTarget(),
         mapTemplate,
         mapEl = $("#map"),
-        mapTemplateHTML = $("#templates .template_map").html();
+        googleMapsEl,
+        mapTemplateHTML = $("#templates .template_map").html(),
+        googleMapsTemplate,
+        googleMapsTemplateHTML = $("#templates .template_googleMaps").html(),
+        googleMapsInitString = "Arcaden,+Regensburg";
 
     // Init view
     function initView() {
-        mapEl.html(mapTemplate());
+        let storeObject = {stores: model_marker.getMarkers()};
+        console.log(storeObject)
+        mapEl.html(mapTemplate(storeObject));
+        googleMapsEl = $("#googleMaps");
     }
 
+    function reloadGoogleMaps(query) {
+        googleMapsEl.html(googleMapsTemplate({query: query}));
+    }
+    
     // Init listeners
     function initListeners() {
-
+        $("#map .list-group-item").click(function (event) {
+            console.log(event.target.id)
+            reloadGoogleMaps(model_marker.getAddressString(event.target.id));
+            $("#map .list-group-item").removeClass("active")
+            $(event.target).addClass("active")
+            
+        });
     }
 
     // Wire model
     function wireModel() {
-
+        
     }
 
     // Activate view
@@ -30,11 +47,13 @@ Soapify.viewcontroller_map = function () {
             display: "block"
         });
         document.title = "Soapify - Map";
+        reloadGoogleMaps(googleMapsInitString);
     }
 
     function init() {
-        //mapTemplate = _.template(mapTemplateHTML);
-        //initView();
+        mapTemplate = _.template(mapTemplateHTML);
+        googleMapsTemplate = _.template(googleMapsTemplateHTML);
+        initView();
         //wireModel();
         initListeners();
 
