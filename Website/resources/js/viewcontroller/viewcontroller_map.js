@@ -28,6 +28,7 @@ Soapify.viewcontroller_map = function (model_marker) {
     // Init listeners
     function initListeners() {
         $("#map .list-group-item").click(function (event) {
+            console.log(event.target.id)
             reloadGoogleMaps(model_marker.getAddressString(event.target.id));
         });
     }

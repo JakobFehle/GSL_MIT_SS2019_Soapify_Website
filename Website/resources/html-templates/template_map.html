@@ -6,12 +6,12 @@
                 <% if(stores.length != 0) {
                         _.each(stores, function (store) {%>
                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" id="<%=store.id%>">
-                                <div class="d-flex w-100 justify-content-between">
+                                <div class="d-flex w-100 justify-content-between click-through">
                                       <h5 class="mb-1"><%=store.name%></h5>
                                       <small></small>
                                 </div>
-                                <p class="mb-1"><%=store.address.street%> <%=store.address.number%>, <%=store.address.city%></p>
-                                <small>Produkte: </br><%_.each(store.sortiment, function (product) {%><%=product%> </br><%})%></small>
+                                <p class="mb-1 click-through"><%=store.address.street%> <%=store.address.number%>, <%=store.address.city%></p>
+                                <small class="click-through">Produkte: </br><%_.each(store.sortiment, function (product) {%><%=product%> </br><%})%></small>
                            </a>
                 <%})}%>
                 </div>

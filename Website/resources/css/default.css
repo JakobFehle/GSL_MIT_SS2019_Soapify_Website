@@ -54,6 +54,10 @@ section .container {
     -webkit-overflow-scrolling: touch;
 }
 
+.click-through {
+  pointer-events: none;
+}
+
 /* ----- */
 /* MEDIA */
 /* ----- */
