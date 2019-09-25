@@ -30,6 +30,9 @@ Soapify.viewcontroller_map = function (model_marker) {
         $("#map .list-group-item").click(function (event) {
             console.log(event.target.id)
             reloadGoogleMaps(model_marker.getAddressString(event.target.id));
+            $("#map .list-group-item").removeClass("active")
+            $(event.target).addClass("active")
+            
         });
     }
 
