@@ -1,7 +1,7 @@
 var Soapify = Soapify || {},
     EventTarget = EventTarget || {};
 
-Soapify.viewcontroller_map = function (model_marker) {
+Soapify.viewcontroller_map = function (model_store) {
     "use strict";
     
     var that = new EventTarget(),
@@ -9,16 +9,20 @@ Soapify.viewcontroller_map = function (model_marker) {
         mapEl = $("#map"),
         googleMapsEl,
         mapTemplateHTML = $("#templates .template_map").html(),
+        mapStoresTemplate,
+        mapStoresTemplateHTML = $("#templates .template_mapStores").html(),
+        mapStoresEl,
         googleMapsTemplate,
         googleMapsTemplateHTML = $("#templates .template_googleMaps").html(),
         googleMapsInitString = "Arcaden,+Regensburg";
 
     // Init view
     function initView() {
-        let storeObject = {stores: model_marker.getMarkers()};
-        console.log(storeObject)
-        mapEl.html(mapTemplate(storeObject));
+        mapEl.html(mapTemplate());
         googleMapsEl = $("#googleMaps");
+        mapStoresEl = $("#mapStores");
+        mapStoresEl.html(mapStoresTemplate({stores: model_store.getStores()}));
+        
     }
 
     function reloadGoogleMaps(query) {
@@ -28,17 +32,14 @@ Soapify.viewcontroller_map = function (model_marker) {
     // Init listeners
     function initListeners() {
         $("#map .list-group-item").click(function (event) {
-            console.log(event.target.id)
-            reloadGoogleMaps(model_marker.getAddressString(event.target.id));
+            reloadGoogleMaps(model_store.getAddressString(event.target.id));
             $("#map .list-group-item").removeClass("active")
             $(event.target).addClass("active")
-            
         });
-    }
-
-    // Wire model
-    function wireModel() {
-        
+        $('#mapSearchInput').on('input', function() { 
+            let searchResult = model_store.getStoresByInput($(this).val());
+            mapStoresEl.html(mapStoresTemplate({stores: searchResult}));
+        });
     }
 
     // Activate view
@@ -53,8 +54,8 @@ Soapify.viewcontroller_map = function (model_marker) {
     function init() {
         mapTemplate = _.template(mapTemplateHTML);
         googleMapsTemplate = _.template(googleMapsTemplateHTML);
+        mapStoresTemplate = _.template(mapStoresTemplateHTML);
         initView();
-        //wireModel();
         initListeners();
 
         that.activate = activate;

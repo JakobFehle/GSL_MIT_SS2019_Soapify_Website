@@ -33,8 +33,6 @@ section .container {
     border-radius: 5px;
 }
 
-
-
 #navbar_profile {
     margin-right: 20px;
 }
@@ -56,6 +54,11 @@ section .container {
 
 .click-through {
   pointer-events: none;
+}
+
+
+#mapSearchInput {
+    margin-bottom: 15px;
 }
 
 /* ----- */
