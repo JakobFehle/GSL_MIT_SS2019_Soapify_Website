@@ -17,6 +17,15 @@
 #intro{
     padding-bottom: 5em;
 }
+
+#solution{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#steps{
+    margin-top: 50px;
+}
 .bild {
     position: relative;
     display: inline-block;
@@ -36,6 +45,7 @@
 .text {
     color: rgb(255, 255, 255);
     position: absolute;
+    top: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
