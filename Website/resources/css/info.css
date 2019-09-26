@@ -17,3 +17,33 @@
 #intro{
     padding-bottom: 5em;
 }
+.bild {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.overlay {
+    position: absolute;
+    transition: all .9s ease;
+    opacity: 0;
+    /*background: rgb(0, 0, 0, 0.4);*/
+    background: rgb(66, 66, 66);
+    border-radius: 50%
+}
+.bild:hover .overlay {
+    opacity: 0.8;
+}
+.text {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+}
+.overlayFade {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
