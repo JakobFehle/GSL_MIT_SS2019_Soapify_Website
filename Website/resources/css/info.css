@@ -1,17 +1,4 @@
-.card{
-    background-color: #EDEDED;
-
-}
-.card-body{
-    background-color: #638EAC;
-    border: none;
-}
-.card-header{
-    color: #638EAC;
-}
-
-#collapse{
-    background-color: black;
+.a{
     color: white;
 }
 #intro{
