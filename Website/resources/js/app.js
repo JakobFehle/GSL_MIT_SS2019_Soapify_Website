@@ -9,13 +9,15 @@ Soapify = (function () {
         vc_navbar,
         vc_info,
         vc_map,
-        vc_contact;
+        vc_contact,
+        model_store;
 
     // Init necessary modules at start
     function initModules() {
+        model_store = new Soapify.model_store();
         vc_navbar = new Soapify.viewcontroller_navbar();
         vc_info = new Soapify.viewcontroller_info();
-        vc_map = new Soapify.viewcontroller_map();
+        vc_map = new Soapify.viewcontroller_map(model_store);
         vc_contact = new Soapify.viewcontroller_contact();
     }
 
@@ -58,6 +60,7 @@ Soapify = (function () {
     function init() {
         initModules();
         initListeners();
+        goTo({data: {target: 'info'}});
     }
 
     that.init = init;

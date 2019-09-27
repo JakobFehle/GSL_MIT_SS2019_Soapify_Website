@@ -39,8 +39,6 @@ section .container {
     border-radius: 5px;
 }
 
-
-
 #navbar_profile {
     margin-right: 20px;
 }
@@ -49,9 +47,25 @@ section .container {
     margin-left: 15px;
 }
 
+/* ------ */
+/*  Maps  */
+/* ------ */
+
+.list-group{
+    max-height: 800px;
+    margin-bottom: 10px;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.click-through {
+  pointer-events: none;
+}
 
 
-
+#mapSearchInput {
+    margin-bottom: 15px;
+}
 
 /* ----- */
 /* MEDIA */
