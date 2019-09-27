@@ -14,8 +14,19 @@ body {
     padding-top:5em;
 }
 
-* { color:#fff; text-decoration: none;}
 
+/** { color:#fff; text-decoration: none;}*/
+
+.list-group{
+    color: black;
+    text-align: left;
+}
+.list-group-item.active{
+    color: black;
+    background-color: #CECECE;
+    border-color: #CECECE;
+
+}
 .divider {
     height: 2px;
     width: 100%;

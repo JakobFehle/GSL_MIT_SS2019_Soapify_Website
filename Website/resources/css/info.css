@@ -4,10 +4,32 @@
 #intro{
     padding-bottom: 5em;
 }
+.zoom {
+    padding: 0px;
+    background-color: #638EAC;
+    transition: transform .2s;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
 
+.zoom:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);}
+
+#problem{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
 #solution{
     margin-top: 50px;
     margin-bottom: 50px;
+}
+#solutiontext{
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 #steps{
@@ -43,4 +65,11 @@
     width: 100%;
     top: 0;
     left: 0;
+}
+#download{
+    margin-top: 50px;
+}
+
+#contactinfo{
+    margin-top: 50px;
 }
