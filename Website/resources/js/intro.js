@@ -65,3 +65,7 @@ window.onload = function() {
     }
 });
 */
+function callPopup() {
+    let popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
