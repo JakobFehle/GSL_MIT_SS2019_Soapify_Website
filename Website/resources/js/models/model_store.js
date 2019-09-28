@@ -70,6 +70,26 @@ Soapify.model_store = function (backendAdress) {
                     "number": 128
                         },
                 "sortiment": ["Bio Blue","Bio Green"]
+            },
+            {
+                "id": 6,
+                "name": "Füllgut",
+                "address": {
+                    "city": "Regensburg",
+                    "street": "Obere Bachgasse",
+                    "number": 18
+                        },
+                "sortiment": ["Bio Blue","Bio Red", "Bio Green"]
+            },
+            {
+                "id": 7,
+                "name": "Denn's Biomarkt",
+                "address": {
+                    "city": "Regensburg",
+                    "street": "Kumpfmühler Straße",
+                    "number": 8
+                        },
+                "sortiment": ["Bio Blue","Bio Red", "Bio Green"]
             }
         ]
     }
