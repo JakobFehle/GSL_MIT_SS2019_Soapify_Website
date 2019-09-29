@@ -94,10 +94,12 @@ Soapify.model_store = function (backendAdress) {
         ]
     }
 
+    // Getter
     function getStores() {
         return stores;
     }
 
+    // Format store to string for google maps request
     function getAddressString(objId) {
         let store = stores.find(function(obj) {
             return obj.id == objId;
@@ -106,6 +108,7 @@ Soapify.model_store = function (backendAdress) {
         return addressString.replace(/\s/g, "+");
     }
     
+    // Return stores according to input search string
     function getStoresByInput(input) {
         let result = _.filter(stores, function (store) {
             return store.name.toLowerCase().includes(input.toLowerCase());

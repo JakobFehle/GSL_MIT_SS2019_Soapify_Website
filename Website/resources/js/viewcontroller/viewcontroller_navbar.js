@@ -34,7 +34,7 @@ Soapify.viewcontroller_navbar = function () {
     // Init listeners
     function initListeners() {
 
-        // Dashboard
+        // Info
         $('#navbar_info').click(function (event) {
             that.dispatchEvent({
                 type: "redirect",
@@ -43,6 +43,8 @@ Soapify.viewcontroller_navbar = function () {
                 }
             });
         });
+        
+        // Map
         $('#navbar_map').click(function (event) {
             that.dispatchEvent({
                 type: "redirect",
@@ -51,6 +53,8 @@ Soapify.viewcontroller_navbar = function () {
                 }
             });
         });
+        
+        // Contact
         $('#navbar_contact').click(function (event) {
             that.dispatchEvent({
                 type: "redirect",
@@ -64,7 +68,10 @@ Soapify.viewcontroller_navbar = function () {
 
     // Init view
     function initView() {
+        
+        // Attach navbar template to dom
         navbarEl.html(navbarTemplate());
+        
         navbarItems = $('.nav-item');
     }
 
