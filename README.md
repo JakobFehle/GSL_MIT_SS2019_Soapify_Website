@@ -1,4 +1,5 @@
-# GSL_MIT_SS2019
+# Global Startup Lab MIT SS2019
+
 ## Website: http://soapify.dekoschmiede-dechant.de/#
 
 ### Infopage: 
